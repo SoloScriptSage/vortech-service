@@ -1,0 +1,311 @@
+/* Global styles */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Logo styles */
+.logo {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-link{
+    text-decoration: none
+}
+
+.logo-part1 {
+    color: #A6A6A6;
+    font-weight: bold; /* Ensure "vor::" is bold */
+}
+
+.logo-part2 {
+    color: #0097B2;
+    font-weight: bold; /* Ensure "TECH" is bold */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1e88e5;
+}
+
+/* Main container */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Book info layout */
+.book-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Book cover */
+.book-cover {
+    width: 300px;
+    height: auto;
+}
+
+/* Book details section */
+.book-details {
+    max-width: 400px;
+}
+
+.book-details h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.book-details p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.book-link {
+    display: inline-block;
+    color: #1e88e5;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid #1e88e5;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.book-link:hover {
+    background-color: #1e88e5;
+    color: #ffffff;
+}
+
+
+/* Scoped styles for task tracker */
+.task-tracker {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.task-tracker .container {
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;/* Hero section */
+}
+    
+.task-tracker #time {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.task-tracker .controls {
+    margin-top: 20px;
+}
+
+.task-tracker button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1e88e5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.task-tracker button:hover {
+    background-color: #1565c0;
+}
+
+.task-tracker .counter {
+    margin-top: 30px;
+}
+
+.task-tracker .task-button {
+    font-size: 20px;
+    padding: 10px 30px;
+    background-color: #43a047;
+    margin-top: 20px;
+}
+
+.task-tracker .task-button:hover {
+    background-color: #388e3c;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    height: 40vh; /* Adjust as needed */
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video fills the container */
+    transform: translate(-50%, -50%); /* Center the video */
+    z-index: -1; /* Place the video behind the content */
+}
+
+/* Add dark overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: 0; /* Places the overlay on top of the video but behind the content */
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    z-index: 1; /* Keep the content above the video */
+}
+
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #43a047;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #388e3c;
+}
+
+/* Section for features */
+.section {
+    background-color: #1e1e1e;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.section-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.feature-box {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.feature-box h3 {
+    margin-bottom: 20px;
+    color: #0097B2;
+}
+
+.feature-box p {
+    margin-bottom: 20px;
+}
+
+.feature-button {
+    background-color: #1e88e5;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.feature-button:hover {
+    background-color: #1565c0;
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+    margin-top: 40px;
+}
+
+
+.current-time {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #e0e0e0;
+    text-align: center;
+}
