@@ -52,18 +52,31 @@ window.onload = createChart;
 let stats = JSON.parse(localStorage.getItem("taskStats")) || {};
 
 function saveStats() {
-    const date = new Date().toLocaleDateString(); // Get today's date
-
+    const date = new Date().toLocaleDateString();
     if (!stats[date]) {
         stats[date] = { tasksCompleted: 0, timeSpent: 0 };
     }
-
-    // Update the stats
     stats[date].tasksCompleted = taskCount;
     stats[date].timeSpent = totalSeconds;
 
-    // Save the stats back to localStorage
+    // Save to localStorage (still do this)
     localStorage.setItem("taskStats", JSON.stringify(stats));
+
+    // Send data to the server to save it to a file
+    fetch('/save-stats', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(stats) // Send the stats object to the server
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Stats saved to server:', data);
+    })
+    .catch(error => {
+        console.error('Error saving stats to server:', error);
+    });
 }
 
 // Call saveStats when the task is incremented or when you stop the timer
