@@ -53,22 +53,33 @@ nav ul li a:hover {
 
 /* Task Tracker Main Styles */
 .task-tracker {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     padding: 40px;
     background-color: #121212;
-    overflow-y: auto;
+    margin: 0 auto;  /* Center the task tracker container */
+    max-width: 1200px;  /* Limit the width */
 }
 
-
-h1 {
-    font-size: 36px;
-    color: #ffffff;
-    margin-bottom: 20px;
+/* Flex container for left and right sections */
+.tracker-container {
+    display: flex;
+    justify-content: space-between;  /* Space between left and right sections */
+    align-items: flex-start;
+    gap: 20px;  /* Adds space between left and right sections */
 }
 
+/* Left Section (Timer, Counter, Stats) */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    width: 40%;  /* Left section takes 40% of the width (adjusted) */
+}
+
+/* Right Section (Chart) */
+.right-section {
+    width: 60%;  /* Right section (chart) now takes 60% of the width (adjusted) */
+}
+
+/* Timer, Counter, Daily Stats */
 .timer, .counter, .daily-stats {
     background-color: #1e1e1e;
     padding: 20px;
@@ -127,35 +138,23 @@ button:hover {
 
 /* Chart Styles */
 canvas {
-    margin-top: 40px;
-    width: 100%; /* Ensures it fits within the available width */
-    max-width: 600px; /* Max width so it doesn't stretch too much */
-    height: auto; /* Maintains aspect ratio */
+    width: 100%;  /* Ensure chart fills the container */
+    height: 400px;  /* Increased height for the chart */
+    max-height: 500px;  /* Optional: to avoid it becoming too tall */
 }
-
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .task-tracker {
-        padding: 15px;
+    .tracker-container {
+        flex-direction: column;
+        gap: 10px;  /* Reduce space between sections on smaller screens */
     }
 
-    .timer, .counter, .daily-stats {
-        width: 100%;
-        padding: 10px;
+    .left-section {
+        width: 100%;  /* Full width for left section */
     }
 
-    #time {
-        font-size: 36px;  /* Slightly smaller for mobile */
-    }
-
-    .task-button {
-        padding: 12px 20px;
-    }
-
-    canvas {
-        width: 100%;
-        height: auto;  /* Keeps the aspect ratio */
+    .right-section {
+        width: 100%;  /* Full width for right section (chart) */
     }
 }
-
