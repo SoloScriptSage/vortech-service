@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Timer & Counter</title>
     <link rel="stylesheet" href="task-tracker.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 <body>
     <header>
@@ -26,36 +26,31 @@
 
     <div class="task-tracker">
         <h1>Task Tracker</h1>
-            
-            <!-- Timer and Controls -->
-            <div class="timer">
-                <span id="time">00:00:00</span>
-                <div class="controls">
-                    <button id="startStopBtn" onclick="startStopTimer()">Start Timer</button>
-                    <button id="resetBtn" onclick="resetTimer()">Reset Timer</button>
-                </div>
+        
+        <div class="timer">
+            <span id="time">00:00:00</span>
+            <div class="controls">
+                <button id="startStopBtn" onclick="startStopTimer()">Start Timer</button>
+                <button id="resetBtn" onclick="resetTimer()">Reset Timer</button>
             </div>
+        </div>
 
-            <!-- Task Counter -->
-            <div class="counter">
-                <h2>Tasks Completed: <span id="taskCount">0</span></h2>
-                <button class="task-button" onclick="incrementTask()">+ Add Task</button>
-            </div>
+        <div class="counter">
+            <h2>Tasks Completed: <span id="taskCount">0</span></h2>
+            <button class="task-button" onclick="incrementTask()">+ Add Task</button>
+        </div>
 
-            <!-- Display Daily Stats -->
-            <div class="daily-stats">
-                <h2>Today's Statistics</h2>
-                <p>Tasks Completed: <span id="dailyTasksCompleted">0</span></p>
-                <p>Time Spent: <span id="dailyTimeSpent">0 hours 0 minutes</span></p>
-            </div>
+        <div class="daily-stats">
+            <h2>Today's Statistics</h2>
+            <p>Tasks Completed: <span id="dailyTasksCompleted">0</span></p>
+            <p>Time Spent: <span id="dailyTimeSpent">0 hours 0 minutes</span></p>
+        </div>
 
-            <!-- Display Current Time in Poland -->
-            <div class="current-time">
-                <p>Current Time (Poland): <span id="currentTime"></span></p>
-            </div>
+        <div class="current-time">
+            <p>Current Time (Poland): <span id="currentTime"></span></p>
+        </div>
 
-            <!-- Task Time Graph -->
-            <canvas id="timeSpentChart" width="400" height="200"></canvas>
+        <canvas id="timeSpentChart" width="400" height="200"></canvas>
     </div>
 
     <script src="task-tracker.js"></script>

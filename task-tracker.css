@@ -55,12 +55,13 @@ nav ul li a:hover {
 .task-tracker {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
     padding: 40px;
     background-color: #121212;
+    overflow-y: auto;
 }
+
 
 h1 {
     font-size: 36px;
@@ -127,35 +128,34 @@ button:hover {
 /* Chart Styles */
 canvas {
     margin-top: 40px;
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Ensures it fits within the available width */
+    max-width: 600px; /* Max width so it doesn't stretch too much */
+    height: auto; /* Maintains aspect ratio */
 }
+
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .task-tracker {
-        padding: 20px;
+        padding: 15px;
     }
 
     .timer, .counter, .daily-stats {
         width: 100%;
-        padding: 15px;
+        padding: 10px;
     }
 
     #time {
-        font-size: 36px;
-    }
-
-    button {
-        width: 100%;
+        font-size: 36px;  /* Slightly smaller for mobile */
     }
 
     .task-button {
-        width: 100%;
-        padding: 12px;
+        padding: 12px 20px;
     }
 
-    .current-time {
-        font-size: 16px;
+    canvas {
+        width: 100%;
+        height: auto;  /* Keeps the aspect ratio */
     }
 }
+
